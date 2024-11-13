@@ -2,7 +2,7 @@
 
 GlueX Analysis Example with (hopefully) complete documentation
 
-Author: Mike McCracken
+Author: Mike McCracken, github: mmccracken0137
 
 ## Helpful links
 
