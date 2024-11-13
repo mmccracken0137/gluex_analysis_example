@@ -21,6 +21,11 @@ Author: Mike McCracken, github: mmccracken0137
 
 ## Analysis steps
 
+## Accessing the JLab CUE system
+ssh to the ifarm at JLab.
+- Basic info on how this can be done is [here](https://jlab.servicenowservices.com/scicomp?id=kb_article&sysparm_article=KB0015066
+- Suggestions on how to possibly streamline the process are [here](https://jlab.servicenowservices.com/scicomp?id=kb_article&sysparm_article=KB0014918)
+
 ## Environment set-up
 If you are computing on the CUE system at JLab and using `tcsh` (or `csh`) as your shell, add the following lines to the `.tcshrc` or `.cshrc` file in your home directory:
 ```
@@ -30,11 +35,19 @@ gxenv
 If you're using bash as your shell, the two lines above should also work.
 (Note: I am using `tcsh`.  Some of what follows below will assume that you are also using `tcsh` or `csh`.  If you're a basher and encounter problems, keep in mind that the shell mismatch could be a cause.)
 
+You can check the extent to which this worked by executing commands like
+```
+ccdb -i
+root
+hd_root
+```
+and making sure they don't crash.
 
 ## Using git
+
 To clone this repo
 > git clone https://github.com/mmccracken0137/gluex_analysis_example.git
-Please contribute!  
+Please contribute!
 
 ### Data
 #### 1. File types and the many things that we call them
