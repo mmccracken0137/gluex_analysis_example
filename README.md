@@ -23,7 +23,7 @@ Author: Mike McCracken, github: mmccracken0137
 
 ## Accessing the JLab CUE system
 ssh to the ifarm at JLab.
-- Basic info on how this can be done is [here](https://jlab.servicenowservices.com/scicomp?id=kb_article&sysparm_article=KB0015066
+- Basic info on how this can be done is [here](https://jlab.servicenowservices.com/scicomp?id=kb_article&sysparm_article=KB0015066)
 - Suggestions on how to possibly streamline the process are [here](https://jlab.servicenowservices.com/scicomp?id=kb_article&sysparm_article=KB0014918)
 
 ## Environment set-up
