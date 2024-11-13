@@ -1,3 +1,5 @@
-GlueX Analysis Example with _hopefully) complete documentation
+# gluex_analysis_example
+
+GlueX Analysis Example with (hopefully) complete documentation
 
 Author: Mike McCracken
