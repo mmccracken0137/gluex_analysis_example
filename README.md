@@ -19,6 +19,7 @@ Author: Mike McCracken, github: mmccracken0137
 ## Using git
 To clone this repo
 > git clone https://github.com/mmccracken0137/gluex_analysis_example.git
+Please contribute!  
 
 ### Data
 1. Analysis launch
