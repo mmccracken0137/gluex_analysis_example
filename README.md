@@ -11,10 +11,25 @@ Author: Mike McCracken, github: mmccracken0137
 - [Naomi's personal link dump](https://halldweb.jlab.org/wiki-private/index.php/User:Njarvis)
 - Brad Sawatzky, Basics of the JLab Computing Farm sessions from the [JLab GSPDA Mini Software Workshop](https://indico.jlab.org/event/879/) (6 Sep 2024)
 - Naomi's [GoogleDoc about MCWrapper](https://docs.google.com/document/d/1m8ZWj1mVdu7c4xOZpdhYuzTFrJAwJzNtjgV9JQMDqzc/edit?tab=t.0)
+- Alex Austregesilo, [Plug-ins, ReactionFilter and Analysis Submit Form](https://halldweb.jlab.org/DocDB/0040/004010/001/presentation.pdf) (May 2019)
+- [How to choose software versions on the MC submit form](https://halldweb.jlab.org/wiki/index.php/How_to_choose_software_versions_on_the_MC_submission_form)
+- For example, [Spring 2017 Analysis Launch](https://halldweb.jlab.org/wiki-private/index.php/Spring_2017_Analysis_Launch) information
+- [GlueX Data Information](https://halldweb.jlab.org/wiki-private/index.php/GlueX_Data_Information)
+- [MC Submit form](https://halldweb.jlab.org/gluex_sim/SubmitSim.html)
+- [Private GlueX Wiki](https://halldweb.jlab.org/wiki-private/index.php/Main_Page)
+- Analysis Launch [Reaction Submit form](https://halldweb.jlab.org/analysis/SubmitReaction.html)
 
 ## Analysis steps
 
 ## Environment set-up
+If you are computing on the CUE system at JLab and using `tcsh` (or `csh`) as your shell, add the following lines to the `.tcshrc` or `.cshrc` file in your home directory:
+```
+source /group/halld/Software/build_scripts/gluex_env_boot_jlab.csh
+gxenv
+```
+If you're using bash as your shell, the two lines above should also work.
+(Note: I am using `tcsh`.  Some of what follows below will assume that you are also using `tcsh` or `csh`.  If you're a basher and encounter problems, keep in mind that the shell mismatch could be a cause.)
+
 
 ## Using git
 To clone this repo
