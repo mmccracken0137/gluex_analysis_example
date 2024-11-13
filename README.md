@@ -13,6 +13,13 @@ Author: Mike McCracken
 - Naomi's [GoogleDoc about MCWrapper](https://docs.google.com/document/d/1m8ZWj1mVdu7c4xOZpdhYuzTFrJAwJzNtjgV9JQMDqzc/edit?tab=t.0)
 
 ## Analysis steps
+
+## Environment set-up
+
+## Using git
+To clone this repo
+> git clone https://github.com/mmccracken0137/gluex_analysis_example.git
+
 ### Data
 1. Analysis launch
 1. Moving files from tape to cache
