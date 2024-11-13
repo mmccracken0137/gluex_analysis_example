@@ -22,11 +22,12 @@ To clone this repo
 Please contribute!  
 
 ### Data
-1. Analysis launch
-1. Moving files from tape to cache
-1. Making and running a DSelector
-1. Running on the computing cluster
-1. Tuning cuts
-1. Creating and using plots
+#### 1. File types and the many things that we call them
+#### 2. Analysis launch
+#### 3. Moving files from tape to cache
+#### 4. Making and running a DSelector
+#### 5. Running on the computing cluster
+#### 6. Tuning cuts
+#### 7. Creating and using plots
 
 ### Simulation
