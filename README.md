@@ -74,7 +74,7 @@ Again, we're not submitting an analysis launch request at this time because our 
 #### 3. Moving files from tape to cache
 
 OK, let's assume that the analysis launch batch has run and we've received an e-mail telling us that our skim files are ready.
-These files are likely BIG, and the default behavior is for them to be stored on JLab's Mass Storage System (MSS).
+These files are likely BIG, and the default behavior is for them to be stored on [JLab's Mass Storage System (MSS)](https://scicomp.jlab.org/docs/storage).
 Our large, important data files are stored on tape because of tape's security and stability.
 The `/mss` filesystem shows, but does not allow access to, the files that exist on the MSS.
 We can list, but not access, these files from the ifarm:
