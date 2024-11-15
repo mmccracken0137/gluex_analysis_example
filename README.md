@@ -69,8 +69,68 @@ The third line indicates that we will perform a kinematic fit to momentum only (
 
 Looking at the [Spring 2017 Analysis Launch](https://halldweb.jlab.org/wiki-private/index.php/Spring_2017_Analysis_Launch) page, we see that this reaction was skimmed as part of version 69 (scoll down to "ver69").  You'll note that the text that configured our skim has been converted into a single string, `tree_kplamb__lamb_pimprot__M18_B4_F1`, which will be in the files associated with this skim.
 
+Again, we're not submitting an analysis launch request at this time because our reaction has already been skimmed.
+
 #### 3. Moving files from tape to cache
+
+OK, let's assume that the analysis launch batch has run and we've received an e-mail telling us that our skim files are ready.
+These files are likely BIG, and the default behavior is for them to be stored on JLab's Mass Storage System (MSS).
+Our large, important data files are stored on tape because of tape's security and stability.
+The `/mss` filesystem shows, but does not allow access to, the files that exist on the MSS.
+We can list, but not access, these files from the ifarm:
+```
+> ls /mss/halld/RunPeriod-2017-01/analysis/ver69/tree_kplamb__lamb_pimprot__M18_B4_F1/merged/
+tree_kplamb__lamb_pimprot__M18_B4_F1_030730.root  tree_kplamb__lamb_pimprot__M18_B4_F1_030744.root
+tree_kplamb__lamb_pimprot__M18_B4_F1_030731.root  tree_kplamb__lamb_pimprot__M18_B4_F1_030745.root
+tree_kplamb__lamb_pimprot__M18_B4_F1_030732.root  tree_kplamb__lamb_pimprot__M18_B4_F1_030749.root
+tree_kplamb__lamb_pimprot__M18_B4_F1_030733.root  tree_kplamb__lamb_pimprot__M18_B4_F1_030754.root
+tree_kplamb__lamb_pimprot__M18_B4_F1_030734.root  tree_kplamb__lamb_pimprot__M18_B4_F1_030769.root
+tree_kplamb__lamb_pimprot__M18_B4_F1_030735.root  tree_kplamb__lamb_pimprot__M18_B4_F1_030770.root
+tree_kplamb__lamb_pimprot__M18_B4_F1_030736.root  tree_kplamb__lamb_pimprot__M18_B4_F1_030778.root
+tree_kplamb__lamb_pimprot__M18_B4_F1_030737.root  tree_kplamb__lamb_pimprot__M18_B4_F1_030779.root
+tree_kplamb__lamb_pimprot__M18_B4_F1_030738.root  tree_kplamb__lamb_pimprot__M18_B4_F1_030780.root
+tree_kplamb__lamb_pimprot__M18_B4_F1_030739.root  tree_kplamb__lamb_pimprot__M18_B4_F1_030783.root
+tree_kplamb__lamb_pimprot__M18_B4_F1_030740.root  tree_kplamb__lamb_pimprot__M18_B4_F1_030784.root
+tree_kplamb__lamb_pimprot__M18_B4_F1_030741.root  tree_kplamb__lamb_pimprot__M18_B4_F1_030785.root
+tree_kplamb__lamb_pimprot__M18_B4_F1_030742.root  tree_kplamb__lamb_pimprot__M18_B4_F1_030787.root
+tree_kplamb__lamb_pimprot__M18_B4_F1_030743.root  tree_kplamb__lamb_pimprot__M18_B4_F1_030788.root
+```
+
+
+Accessing data on tape is VERY inefficient.  As we tune our analysis, we may need to run our code over the data files many times -- doing so with tape is a bad idea.
+So, the first step of working with our new tree files is to move them to a disk where we can access them more easily.
+We do so with the `jcache` command.
+
+
+
+The e-mail should tell us where to find these, but in gener
+
+#### X. Setting up a working directory
+
+We're now ready to start working!  We need a place to do this.  Brad Sawatzky's excellent [Jefferson Lab Scientific Computing Infrastructure Update](https://indico.jlab.org/event/863/contributions/14830/attachments/11384/17588/SciComp-Update-CLAS_June2024_Sawatzky.pdf) gives an overview of the computing resources at JLab.  Slide 10 of the presentation shows the various "Disk Storage Areas and Their Uses".
+
+We're going to be writins some analysis code soon and we'd like it to be backed up -- looks like `/group` is a good fit.  So, let's create a directory on the space that's been allocated for Hall D work:
+```
+mkdir /group/halld/Users/mmccrack
+```
+Note that the default permission on this directory that I created are such that only I have write access, but all others can read the files in this directory.  That's good!  You often want to point other people to your code or files.
+
+I'll also create a subdirectory for this specific analysis:
+```
+mkdir /group/halld/Users/mmccrack/gluex_KLambda_example/
+```
+
+QQQ: Where do we put large downstream data files that we've generated?
+
 #### 4. Making and running a DSelector
+
+Let's move to our working directory and get started:
+```
+cd /group/halld/Users/mmccrack/gluex_KLambda_example/
+```
+
+
+
 #### 5. Running on the computing cluster
 #### 6. Tuning cuts
 #### 7. Creating and using plots
