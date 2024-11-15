@@ -67,6 +67,7 @@ The first line indicates that we're looking for $$\gamma p \rightarrow K^{+}\Lam
 The second line indicates that we're looking for the $$\Lambda \rightarrow p \pi^-$$ decay.
 The third line indicates that we will perform a kinematic fit to momentum only (`F1`) and the mass of the $$\Lambda$$ will not be constrained.
 
+Looking at the [Spring 2017 Analysis Launch](https://halldweb.jlab.org/wiki-private/index.php/Spring_2017_Analysis_Launch) page, we see that this reaction was skimmed as part of version 69 (scoll down to "ver69").  You'll note that the text that configured our skim has been converted into a single string, `tree_kplamb__lamb_pimprot__M18_B4_F1`, which will be in the files associated with this skim.
 
 #### 3. Moving files from tape to cache
 #### 4. Making and running a DSelector
