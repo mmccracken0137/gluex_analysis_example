@@ -55,6 +55,17 @@ In order to generate a skim of the REST files, one uses the [Analysis Reaction S
 - The "M" flag indicates that a particle's mass will not be constrained in the kinematic fit.  Constraining the mass hypothesis of a stable particle is often a good idea -- if you know that you want a proton in the final state, letting the fitter fix the particle's mass to the known proton mass will add important information to the fit.  Conversely, we often do not constrain the masses of particles that have significant width (*e.g.*, the $$\Delta$$ or hyperon resonances) or particles whose masses we don't yet know (are may be searching for).
 - Fit type: TKTKTKTK
 
+Your input in the GUI will format a text blurb that configures the analysis launch -- the rough draft of this text appears in the text box in the middle of the page.  When you click "Submit Reaction" the text is committed to the list of reactions that will be done when the next batch ("version") of skims is run.  The config text looks a bit cryptic, but the particle type codes in [this file](https://github.com/JeffersonLab/halld_recon/blob/master/src/libraries/include/particleType.h).
+
+We're not going to submit an analysis launch at this time because the reaction we wish to analyze in this example has already been skimmed from the Spring 2017 Run Period.  The skim was configured with the following text:
+```
+Reaction1 1_14__11_18
+Reaction1:Decay1 18__9_14
+Reaction1:Flags F1_M18
+```
+The first line indicates that we're looking for $$\gamma p \rightarrow K^{+}\Lambda$$.
+The second line indicates that we're looking for the $$\Lambda \rightarrow p \pi^-$$ decay.
+The third line indicates that we will perform a kinematic fit to momentum only (`F1`) and the mass of the $$\Lambda$$ will not be constrained.
 
 
 #### 3. Moving files from tape to cache
