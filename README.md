@@ -71,6 +71,8 @@ Looking at the [Spring 2017 Analysis Launch](https://halldweb.jlab.org/wiki-priv
 
 Again, we're not submitting an analysis launch request at this time because our reaction has already been skimmed.
 
+Lingo: The analysis launch runs a Reaction Filter on the REST files to produce "analysis trees".
+
 #### 3. Moving files from tape to cache
 
 OK, let's assume that the analysis launch batch has run and we've received an e-mail telling us that our skim files are ready.
@@ -129,6 +131,15 @@ Let's move to our working directory and get started:
 cd /group/halld/Users/mmccrack/gluex_KLambda_example/
 ```
 
+[DSelector documentation](https://halldweb.jlab.org/doc-private/DocDB/ShowDocument?docid=4607)
+
+MakeDSelector
+
+```
+MakeDSelector /cache/halld/RunPeriod-2017-01/analysis/ver69/tree_kplamb__lamb_pimprot__M18_B4_F1/merged/tree_kplamb__lamb_pimprot__M18_B4_F1_030787.root kplamb__lamb_pimprot__M18_B4_F1_Tree kplam_tt
+```
+
+QQQ: In the comments of our made DSelector, PROOF is mentioned?  What is that?
 
 
 #### 5. Running on the computing cluster
