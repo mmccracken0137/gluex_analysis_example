@@ -131,12 +131,40 @@ Let's move to our working directory and get started:
 cd /group/halld/Users/mmccrack/gluex_KLambda_example/
 ```
 
-[DSelector documentation](https://halldweb.jlab.org/doc-private/DocDB/ShowDocument?docid=4607)
-
-MakeDSelector
+DSelectors are the primary way that users interact with the analysis tree files.
+The [DSelector documentation](https://halldweb.jlab.org/doc-private/DocDB/ShowDocument?docid=4607) is quite good and is worth a read before you get too deep into your analysis work (maybe right after you read the simple instructions in this section).
+Simply put, a DSelector is a piece of C code that will instruct ROOT how to parse the analysis tree files, make graphs of features of the events in the file, apply successive cuts to the data, and possible output smaller root tree files for downstream analysis.
+One could in principle write a DSelector-type script from scratch, but the MakeDSelector executable makes a DSelector that will provide basic functionality specific to the reaction you used for your analysis skim.  Running `MakeDSelector` with no arguments tells us about the arguments needed by `MakeDSelector`:
 
 ```
-MakeDSelector /cache/halld/RunPeriod-2017-01/analysis/ver69/tree_kplamb__lamb_pimprot__M18_B4_F1/merged/tree_kplamb__lamb_pimprot__M18_B4_F1_030787.root kplamb__lamb_pimprot__M18_B4_F1_Tree kplam_tt
+> MakeDSelector
+
+Makes a custom DSelector for the input TTree created by the DANA ANALYSIS library.
+1st argument: The input ROOT TTree file name.
+2nd argument: The name of the TTree in the input ROOT file that you want to make a selector for.
+3rd argument: The base-name of the selector class & files you want to generate.
+The generated files will be named "DSelector_<base-name>.C" and "DSelector_<base-name>.h".
+```
+
+In order to make an appropriate DSelector, `MakeDSelector` will actually open our analysis tree file (1st argument), look at the contents of the TTree we specify (2nd argument), and generate some code that we will run, edit, run, edit, run, edit, ...
+We know our analysis tree file, but I can never remember how the TTree object name is formatted.
+The good news is that we can take a look by loading the file in ROOT and listing its contents:
+```
+root [0] tf = TFile("/cache/halld/RunPeriod-2017-01/analysis/ver69/tree_kplamb__lamb_pimprot__M18_B4_F1/merged/tree_kplamb__lamb_pimprot__M18_B4_F1_030787.root")
+(TFile &) Name: /cache/halld/RunPeriod-2017-01/analysis/ver69/tree_kplamb__lamb_pimprot__M18_B4_F1/merged/tree_kplamb__lamb_pimprot__M18_B4_F1_030787.root Title:
+root [1] tf.ls()
+TFile**		/cache/halld/RunPeriod-2017-01/analysis/ver69/tree_kplamb__lamb_pimprot__M18_B4_F1/merged/tree_kplamb__lamb_pimprot__M18_B4_F1_030787.root
+ TFile*		/cache/halld/RunPeriod-2017-01/analysis/ver69/tree_kplamb__lamb_pimprot__M18_B4_F1/merged/tree_kplamb__lamb_pimprot__M18_B4_F1_030787.root
+  KEY: TTree	kplamb__lamb_pimprot__M18_B4_F1_Tree;1	kplamb__lamb_pimprot__M18_B4_F1_Tree
+```
+The last line above is the TTree name that we want.
+Great!  Let's now make our DSelector.  I'll use `kplam_analysis_ex' as the third argument for `MakeDSelector`:
+```
+> MakeDSelector /cache/halld/RunPeriod-2017-01/analysis/ver69/tree_kplamb__lamb_pimprot__M18_B4_F1/merged/tree_kplamb__lamb_pimprot__M18_B4_F1_030787.root kplamb__lamb_pimprot__M18_B4_F1_Tree kplam_analysis_ex
+> ls -ltr
+total 48
+-rw-r--r--. 1 mmccrack halld  1983 Nov 21 11:34 DSelector_kplam_analysis_ex.h
+-rw-r--r--. 1 mmccrack halld 22499 Nov 21 11:34 DSelector_kplam_analysis_ex.C
 ```
 
 QQQ: In the comments of our made DSelector, PROOF is mentioned?  What is that?
