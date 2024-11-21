@@ -21,7 +21,11 @@ If you are computing on the CUE system at JLab and using `tcsh` (or `csh`) as yo
 source /group/halld/Software/build_scripts/gluex_env_boot_jlab.csh
 gxenv
 ```
-If you're using bash as your shell, the two lines above should also work.
+If you're using bash as your shell, simply change the file extension in the first line:
+```
+source /group/halld/Software/build_scripts/gluex_env_boot_jlab.sh
+gxenv
+```
 (Note: I am using `tcsh`.  Some of what follows below will assume that you are also using `tcsh` or `csh`.  If you're a basher and encounter problems, keep in mind that the shell mismatch could be a cause.)
 
 You can check the extent to which this worked by executing commands like
@@ -105,7 +109,7 @@ We do so with the `jcache` command.
 
 
 
-The e-mail should tell us where to find these, but in gener
+The e-mail should tell us where to find these, but in general TKTKTK
 
 #### X. Setting up a working directory
 
@@ -158,6 +162,8 @@ TFile**		/cache/halld/RunPeriod-2017-01/analysis/ver69/tree_kplamb__lamb_pimprot
   KEY: TTree	kplamb__lamb_pimprot__M18_B4_F1_Tree;1	kplamb__lamb_pimprot__M18_B4_F1_Tree
 ```
 The last line above is the TTree name that we want.
+We will eventually run our DSelector over *many* analysis tree files corresponding to many run numbers, but all of these files should have the same format.  Thus, my choice of the file corresponding to run number 030787 above is arbitrary -- the DSelector we generate will work for all fo the analysis tree files in the same directory.
+
 Great!  Let's now make our DSelector.  I'll use `kplam_analysis_ex' as the third argument for `MakeDSelector`:
 ```
 > MakeDSelector /cache/halld/RunPeriod-2017-01/analysis/ver69/tree_kplamb__lamb_pimprot__M18_B4_F1/merged/tree_kplamb__lamb_pimprot__M18_B4_F1_030787.root kplamb__lamb_pimprot__M18_B4_F1_Tree kplam_analysis_ex
@@ -166,6 +172,8 @@ total 48
 -rw-r--r--. 1 mmccrack halld  1983 Nov 21 11:34 DSelector_kplam_analysis_ex.h
 -rw-r--r--. 1 mmccrack halld 22499 Nov 21 11:34 DSelector_kplam_analysis_ex.C
 ```
+
+TKTKTK
 
 QQQ: In the comments of our made DSelector, PROOF is mentioned?  What is that?
 
